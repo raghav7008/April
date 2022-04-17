@@ -7,17 +7,18 @@ class Solution {
             if(x == 1)  return -1;
             else if(x % 3 == 0) count += x/3;
             else{
-                while(true){
-                    if(x == 1)  return -1;
-                    else if(x % 3 == 0){
-                        count += x/3;
-                        break;
-                    }
-                    else{
-                        count++;
-                        x -= 2;
-                    }
-                }
+                // while(true){
+                //     if(x == 1)  return -1;
+                //     else if(x % 3 == 0){
+                //         count += x/3;
+                //         break;
+                //     }
+                //     else{
+                //         count++;
+                //         x -= 2;
+                //     }
+                // }
+                count += (x+2)/3;
             }
         }
         return count;
