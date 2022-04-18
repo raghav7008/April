@@ -15,6 +15,8 @@
  */
 class Solution {
     //ArrayList<Integer> list = new ArrayList<>();
+    int max = 0;
+    int curr = 0;
     public int kthSmallest(TreeNode root, int k) {
 //     LinkedList<TreeNode> stack = new LinkedList<>();
 
@@ -27,15 +29,18 @@ class Solution {
 //       if (--k == 0) return root.val;
 //       root = root.right;
 //     }
-        PriorityQueue<Integer> pq = new PriorityQueue(Collections.reverseOrder());
-        inorder(pq, root, k);
-        return pq.poll();
+        //PriorityQueue<Integer> pq = new PriorityQueue(Collections.reverseOrder());
+        curr = k;
+        inorder(root);
+        return max;
   }
-    public void inorder(PriorityQueue<Integer> pq, TreeNode root, int k){
+    public void inorder(TreeNode root){
         if(root == null)    return;
-        inorder(pq, root.left, k);
-        pq.add(root.val);
-        if(pq.size() > k)   pq.poll();
-        inorder(pq, root.right, k);
+        inorder(root.left);
+        if(--curr == 0){
+            max = root.val;
+            return;
+        }
+        inorder(root.right);
     }
 }
