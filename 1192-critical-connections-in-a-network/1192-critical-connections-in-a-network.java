@@ -26,7 +26,7 @@ class Solution {
             if(vis[it] == 0){
                 dfs(it, node, vis, tin, low, adj, timer);
                 low[node] = Math.min(low[node],low[it]);
-                if(low[it] > tin[node]){
+                if(low[it] > tin[node]){ // lower of adjacent is greater than insertion time of current then that means there is bridge
                     List<Integer> temp = new ArrayList();
                     temp.add(it);
                     temp.add(node);
