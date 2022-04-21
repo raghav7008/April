@@ -5,9 +5,6 @@ class Solution {
             pq.add(points[i]);
             if(pq.size() > k)   pq.poll();
         }
-//         while(!pq.isEmpty()){
-            
-//         }
         int[][] arr = new int[k][2];
         while(!pq.isEmpty()){
             arr[--k] = pq.poll();
