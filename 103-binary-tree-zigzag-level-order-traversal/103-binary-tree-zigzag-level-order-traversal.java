@@ -35,12 +35,14 @@ class Solution {
             else{
                 left = true;
                 int size = q.size();
+                Stack<Integer> st = new Stack<>();
                 for(int i = 0; i < size; i++){
                     TreeNode temp = q.poll();
-                    r.add(0, temp.val);
+                    st.push(temp.val);
                     if(temp.left != null)   q.add(temp.left);
                     if(temp.right != null)  q.add(temp.right);
                 }
+                while(!st.isEmpty())    r.add(st.pop());
             }
             result.add(r);
         }
