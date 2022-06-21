@@ -1,6 +1,6 @@
 class Solution {
     public int calculate(String s) {
-        s = s.replace(" ","");
+        //s = s.replace(" ","");
         Stack<Integer> stack = new Stack<>();
         int res = 0;
         int sign = 1;
