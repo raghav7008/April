@@ -1,4 +1,4 @@
-class Solution {
+class Solution { // (m-1 + n-1)!/(m-1)!*(n-1)!
     public int uniquePaths(int m, int n) {
         m--;
         n--;
